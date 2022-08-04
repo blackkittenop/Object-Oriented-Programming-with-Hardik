@@ -5,7 +5,10 @@ This is complete oops repository written in java !!
 I have 7 modules in this course !!
 
 
-1 - classes ,objects ,Constructor ,Keywords . 
+OOP 1 | classes ,objects ,Constructor ,Keywords . 
 
 
-2 - packages,static ,singleton class , inbuilt methods.
+OOP 2 | packages,static ,singleton class , inbuilt methods.
+
+
+OOP 3 | Principles - Inheritance, Polymorphism, Encapsulation, Abstraction.
