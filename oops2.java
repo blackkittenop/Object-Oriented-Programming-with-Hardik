@@ -10,10 +10,18 @@ public class oops2 {
     // }
     
     static int a = 10;
+    static int b;
+    
+    // This is static block it initialized when class is loaded first.
+    static {
+         System.out.println("Static block initialized.");
+         b = a * 4;
+        }
     
     void message2(){
         System.out.println("Welcome to programming !!");
     }
+    
     public static void main(String[] args){
         message();
         oops2.message(); // you can call static method by object name as it belongs to class
