@@ -15,3 +15,6 @@ OOP 3 | Principles - Inheritance, Polymorphism, Encapsulation, Abstraction.
 
 
 OOP 4 | Access Control, In-built Packages, Object Class
+
+
+OOP 5 | Abstract Classes, Interfaces, Annotations
