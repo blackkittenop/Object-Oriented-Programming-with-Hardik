@@ -61,6 +61,8 @@ class a implements {
      
      
 }
+
+ACCESS CONTROL IN JAVA !!
 /*
 
 Access Control:
@@ -157,6 +159,7 @@ that the static type of obj is D, our simplified rule can deal with it easily by
 
 */
 
+OBJECT CLASS IN JAVA
 
 /*
 
@@ -301,4 +304,177 @@ end
 6. clone(): It returns a new object that is exactly the same as this object. For clone() method refer Clone().
 
 The remaining three methods wa
+*/
+
+
+ANNOTATIONS !!
+
+/*
+    ANNOTATIONS IN JAVA.
+    
+    Java Annotations
+In this tutorial, we will learn what annotations are, different Java annotations and how to use them with the help of examples.
+
+Java annotations are metadata (data about data) for our program source code.
+
+They provide additional information about the program to the compiler but are not part of the program itself. These annotations do not affect the execution of the compiled program.
+
+Annotations start with @. Its syntax is:
+
+@AnnotationName
+Let's take an example of @Override annotation.
+
+The @Override annotation specifies that the method that has been marked with this annotation overrides the method of the superclass with the same method name, return type, and parameter list.
+
+It is not mandatory to use @Override when overriding a method. However, if we use it, the compiler gives an error if something is wrong (such as wrong parameter type) while overriding the method.
+
+Example 1: @Override Annotation Example
+class Animal {
+  public void displayInfo() {
+    System.out.println("I am an animal.");
+  }
+}
+
+class Dog extends Animal {
+  @Override
+  public void displayInfo() {
+    System.out.println("I am a dog.");
+  }
+}
+
+class Main {
+  public static void main(String[] args) {
+    Dog d1 = new Dog();
+    d1.displayInfo();
+  }
+}
+Run Code
+Output
+
+I am a dog.
+In this example, the method displayInfo() is present in both the superclass Animal and subclass Dog. When this method is called, the method of the subclass is called instead of the method in the superclass.
+
+Annotation formats
+Annotations may also include elements (members/attributes/parameters).
+
+1. Marker Annotations
+Marker annotations do not contain members/elements. It is only used for marking a declaration.
+
+Its syntax is:
+
+@AnnotationName()
+Since these annotations do not contain elements, parentheses can be excluded. For example,
+
+@Override
+2. Single element Annotations
+A single element annotation contains only one element.
+
+Its syntax is:
+
+@AnnotationName(elementName = "elementValue")
+If there is only one element, it is a convention to name that element as value.
+
+@AnnotationName(value = "elementValue")
+In this case, the element name can be excluded as well. The element name will be value by default.
+
+@AnnotationName("elementValue")
+3. Multiple element Annotations
+These annotations contain multiple elements separated by commas.
+
+Its syntax is:
+
+@AnnotationName(element1 = "value1", element2 = "value2")
+Annotation placement
+Any declaration can be marked with annotation by placing it above that declaration. As of Java 8, annotations can also be placed before a type.
+
+1. Above declarations
+As mentioned above, Java annotations can be placed above class, method, interface, field, and other program element declarations.
+
+Example 2: @SuppressWarnings Annotation Example
+import java.util.*;
+
+class Main {
+  @SuppressWarnings("unchecked")
+  static void wordsList() {
+    ArrayList wordList = new ArrayList<>();
+
+// This causes an unchecked warning
+    wordList.add("programiz"); 
+
+    System.out.println("Word list => " + wordList);
+  }
+
+  public static void main(String args[]) {
+    wordsList();
+  }
+}
+Run Code
+
+Output
+
+Word list => [programiz]
+If the above program is compiled without using the @SuppressWarnings("unchecked") annotation, the compiler will still compile the program but it will give warnings like:
+
+Main.java uses unchecked or unsafe operations.
+Word list => [programiz]
+We are getting the warning
+
+Main.java uses unchecked or unsafe operations
+because of the following statement.
+
+ArrayList wordList = new ArrayList<>();
+This is because we haven't defined the generic type of the array list. We can fix this warning by specifying generics inside angle brackets <>.
+
+ArrayList<String> wordList = new ArrayList<>();
+2. Type annotations
+Before Java 8, annotations could be applied to declarations only. Now, type annotations can be used as well. This means that we can place annotations wherever we use a type.
+
+Constructor invocations
+
+new @Readonly ArrayList<>()
+Type definitions
+
+@NonNull String str;
+This declaration specifies non-null variable str of type String to avoid NullPointerException.
+
+@NonNull List<String> newList;
+This declaration specifies a non-null list of type String.
+
+List<@NonNull String> newList;
+This declaration specifies a list of non-null values of type String.
+
+Type casts
+
+newStr = (@NonNull String) str;
+extends and implements clause
+
+class Warning extends @Localized Message
+throws clause
+
+public String readMethod() throws @Localized IOException
+Type annotations enable Java code to be analyzed better and provide even stronger type checks.
+
+Types of Annotations
+1. Predefined annotations
+
+@Deprecated
+@Override
+@SuppressWarnings
+@SafeVarargs
+@FunctionalInterface
+2. Meta-annotations
+
+@Retention
+@Documented
+@Target
+@Inherited
+@Repeatable
+3. Custom annotations
+
+These annotation types are described in detail in the Java Annotation Types tutorial.
+
+Use of Annotations
+Compiler instructions - Annotations can be used for giving instructions to the compiler, detect errors or suppress warnings. The built-in annotations @Deprecated, @Override,@SuppressWarnings are used for these purposes.
+Compile-time instructions - Compile-time instructions provided by these annotations help the software build tools to generate code, XML files and many more.
+Runtime instructions - Some annotations can be defined to give instructions to the program at runtime. These annotations are accessed using Java Reflection.
 */
